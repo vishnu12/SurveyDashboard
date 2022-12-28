@@ -1,6 +1,7 @@
 package com.project.dashboard.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ public class ProductController {
 	ProductService productService;
 
 	@GetMapping("/add")
+	@PreAuthorize("hasAnyAuthority('Admin','Prevl_User')")
 	public String getPage() {
 		return "add-product";
 	}
@@ -28,6 +30,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/add")
+	@PreAuthorize("hasAnyAuthority('Admin','Prevl_User')")
 	public String addProduct(@ModelAttribute("product") Product product) {
 		productService.addProduct(product);
 		return "redirect:/";

@@ -43,7 +43,9 @@ public class UserController {
 		return "register";
 	}
 	
+	
 	@GetMapping("/user/add")
+	@PreAuthorize("hasAuthority('Admin')")
 	public String getCreateUserPage() {
 		return "add-user";
 	}
@@ -61,6 +63,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/user/edit/{id}")
+	@PreAuthorize("hasAuthority('Admin')")
 	public String editUser(@PathVariable Long id,Model model) {
 		User user=userService.findUserById(id);
 		List<Role> roles=roleService.getRoles();
@@ -71,6 +74,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/edit")
+	@PreAuthorize("hasAuthority('Admin')")
 	public String saveEditedUser(User usr) {
 		User user=userService.updateUser(usr);
 		return "redirect:/api/users";
