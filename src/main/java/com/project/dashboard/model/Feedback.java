@@ -20,20 +20,21 @@ public class Feedback {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private Set<String> valueForMoney=new HashSet<>();
+	private String valueForMoney;
 	
-	private Set<String> quality=new HashSet<>();
+	private String quality;
 	
-	private Set<String> fit=new HashSet<>();
+	private String fit;
 
-	public Feedback(long id, Set<String> valueForMoney, Set<String> quality,
-			Set<String> fit) {
+	
+	public Feedback(long id, String valueForMoney, String quality, String fit) {
 		super();
 		this.id = id;
 		this.valueForMoney = valueForMoney;
 		this.quality = quality;
 		this.fit = fit;
 	}
+
 
 	public Feedback() {
 		super();
