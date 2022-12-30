@@ -16,8 +16,8 @@
   <a th:href="@{/api/users}">Users</a>
   <a th:href="@{/api/product/add}">Add Product</a>
   </div>
-  <div class="child2">
-  <h5>Hi User</h5>
+  <div class="child2" th:object="${user}">
+  <h5 th:text="'Hi'+' '+*{firstName}"></h5>
   <a th:href="@{/logout}">Logout</a>
   </div>
 </div>

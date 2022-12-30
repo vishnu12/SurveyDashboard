@@ -54,6 +54,10 @@ public class UserService implements UserDetailsService {
 		return userRepository.findById(id).orElseThrow(()->new UserNotFoundException("User not found"));
 	}
 	
+	public User findUserByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+	
 	public User updateUser(User user) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
