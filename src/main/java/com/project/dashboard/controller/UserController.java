@@ -83,6 +83,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/user/delete/{id}")
+	@PreAuthorize("hasAuthority('Admin')")
 	public String deleteUser(@PathVariable Long id) {
 		userService.deleteUser(id);
 		return "redirect:/api/users";

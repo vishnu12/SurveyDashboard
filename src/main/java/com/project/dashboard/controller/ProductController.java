@@ -65,6 +65,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/delete/{id}")
+	@PreAuthorize("hasAuthority('Admin')")
 	public String deleteProduct(@PathVariable Long id) {
 		productService.deleteProductById(id);
 		return "redirect:/";
