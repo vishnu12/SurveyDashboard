@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -47,7 +48,7 @@ public class UserService implements UserDetailsService {
 	
 	
 	public List<User> getUsers(){
-		return userRepository.findAll();
+		return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
 	}
 
 	public User findUserById(Long id) {
@@ -61,6 +62,10 @@ public class UserService implements UserDetailsService {
 	public User updateUser(User user) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
+	}
+	
+	public void deleteUser(Long id) {
+		userRepository.deleteById(id);
 	}
 
 	@Override

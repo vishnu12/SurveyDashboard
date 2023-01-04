@@ -6,14 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.project.dashboard.model.Feedback;
 import com.project.dashboard.model.Product;
+import com.project.dashboard.repository.FeedbackRepository;
 import com.project.dashboard.repository.ProductRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class ProductService {
 
 	@Autowired
 	ProductRepository productRepository;
+	
+	@Autowired
+	FeedbackRepository feedbackRepository;
 	
 	public Product addProduct(Product product) {
 		return productRepository.save(product);
@@ -30,4 +37,12 @@ public class ProductService {
 	public Product updateProduct(Product product) {
 		return productRepository.save(product);
 	}
+	
+	@Transactional
+	public void deleteProductById(Long id) {
+		feedbackRepository.deleteByProdId(id);
+		productRepository.deleteById(id);
+	}
+	
+
 }

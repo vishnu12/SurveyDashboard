@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<title>Review</title>
+</head>
+<body>
+<div class="container-fluid main">
+        <div class="header"><h1>Post Your Ratings</h1></div>
+        <div class="form">
+            <form th:action="@{/api/feedback/add}" method="post" th:object="${feedback}">
+            <h2 th:text="${product.name}" class="text-center mb-4"></h2>
+                 <input type="hidden" name="prodId" th:value="${product.id}" />
+                <div class="mb-3 d-flex row">
+                <div class="col-md-8">
+                <label for="valueForMoney" class="form-label">Value for money</label>
+                </div>
+                <div class="col-md-4">
+                <input type="number" class="form-control" min="1" max="5" id="valueForMoney" name="valueForMoney" th:field="*{valueForMoney}" />
+                </div>               
+                  </div>
+                  <div class="mb-3 d-flex row">
+                  <div class="col-md-8">
+                  <label for="quality" class="form-label">Quality</label>
+                  </div>
+                    <div class="col-md-4">
+                    <input type="number" class="form-control" min="1" max="5" id="quality" name="quality" th:field="*{quality}"/ >
+                    </div>
+                  </div>
+                <div class="mb-3 d-flex row">
+                  <div class="col-md-8">
+                  <label for="fit" class="form-label">Fit</label>
+                  </div>
+                    <div class="col-md-4">
+                    <input type="number" class="form-control" min="1" max="5" id="fit" name="fit" th:field="*{fit}"/>
+                    </div>
+                </div>
+                <div class="mb-3 d-flex row">
+                 <div class="col-md-8">
+                  <label for="delivery" class="form-label">Delivery</label>
+                 </div>
+                    <div class="col-md-4">
+                    <input type="number" class="form-control" min="1" max="5" id="delivery" name="delivery" th:field="*{delivery}" />
+                    </div>
+                </div>
+                <div class="mb-3 d-flex row">
+                 <div class="col-md-8">
+                  <label for="service" class="form-label">Service</label>
+                 </div>
+                   <div class="col-md-4">
+                    <input type="number" class="form-control" min="1" max="5" id="service" name="service" th:field="*{service}" />
+                   </div>
+                </div>
+				 <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              
+        </div>
+    
+    </div>
+</body>
+</html>

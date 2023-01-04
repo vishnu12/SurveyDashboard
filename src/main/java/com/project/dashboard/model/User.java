@@ -31,13 +31,13 @@ public class User {
 	private String email;
 	private String password;
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinTable(name = "users_feedbacks",
-	joinColumns = @JoinColumn(name="user_id",referencedColumnName = "id"),
-	inverseJoinColumns = @JoinColumn(name="feedback_id", referencedColumnName = "id"))
-	private Set<Feedback> feedback =new HashSet<>();
+//	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//	@JoinTable(name = "users_feedbacks",
+//	joinColumns = @JoinColumn(name="user_id",referencedColumnName = "id"),
+//	inverseJoinColumns = @JoinColumn(name="feedback_id", referencedColumnName = "id"))
+//	private Set<Feedback> feedback =new HashSet<>();
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "users_roles",
 	joinColumns = @JoinColumn(name="user_id",referencedColumnName = "id"),
 	inverseJoinColumns = @JoinColumn(name="role_id", referencedColumnName = "id"))
@@ -60,9 +60,9 @@ public class User {
 		this.roles.add(role);
 	}
 	
-	public void addFeedback(Feedback feedback) {
-		this.feedback.add(feedback);
-	}
+//	public void addFeedback(Feedback feedback) {
+//		this.feedback.add(feedback);
+//	}
 
 	public Long getId() {
 		return id;

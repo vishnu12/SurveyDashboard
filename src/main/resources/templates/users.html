@@ -30,11 +30,14 @@
         <td th:text="${user.email}"></td>
         <td th:text="${user.roles}"></td>
         <td><a class="btn btn-primary" th:href="@{'/api/user/edit/' + ${user.id}}">Update</a></td>
-        <td><a  class="btn btn-danger">Delete</a></td>
+        <td><a  class="btn btn-danger" th:href="@{'/api/user/delete/' + ${user.id}}">Delete</a></td>
       </tr>
     </tbody>
   </table>
-<a class="btn btn-primary mt-3" th:href="@{/}">Back</a>
+<div class="btn-container">
+   <a th:href="@{/api/user/add}" class="btn btn-primary">Add</a>
+   <a th:href="@{/}" class="btn btn-primary">Back</a>
+   </div>
 </div>
 </body>
 </html>

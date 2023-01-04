@@ -41,9 +41,9 @@
         <td th:text="${product.name}"></td>
         <td th:text="${product.description}"></td>
         <td th:text="${product.orders}"></td>
-          <td><button class="btn btn-success">View Dashboard</button></td>
+          <td><a class="btn btn-success" th:href="@{'/api/product/dashboard/' + ${product.id}}">View Dashboard</a></td>
         <td><a class="btn btn-primary" th:href="@{'/api/product/update/' + ${product.id}}">Update</a></td>
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td><a class="btn btn-danger" th:href="@{'/api/product/delete/' + ${product.id}}">Delete</a></td>
       </tr>
     </tbody>
   </table>
