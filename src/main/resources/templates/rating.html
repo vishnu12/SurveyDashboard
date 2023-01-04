@@ -19,15 +19,53 @@
                 <label for="valueForMoney" class="form-label">Value for money</label>
                 </div>
                 <div class="col-md-4">
-                <input type="number" class="form-control" min="1" max="5" id="valueForMoney" name="valueForMoney" th:field="*{valueForMoney}" />
+                <div class="form-check">
+                <label class="form-check-label" for="radio2">Excellent</label>
+                <input type="radio" class="form-check-input" id="valueForMoney" name="valueForMoney" th:value="5" th:field="*{valueForMoney}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio2">Very Good</label>
+                <input type="radio" class="form-check-input" id="valueForMoney" name="valueForMoney" th:value="4" th:field="*{valueForMoney}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio2">Good</label>
+                <input type="radio" class="form-check-input" id="valueForMoney" name="valueForMoney" th:value="3" th:field="*{valueForMoney}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio2">Average</label>
+                <input type="radio" class="form-check-input" id="valueForMoney" name="valueForMoney" th:value="2" th:field="*{valueForMoney}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio2">Poor</label>
+                <input type="radio" class="form-check-input" id="valueForMoney" name="valueForMoney" th:value="1" th:field="*{valueForMoney}" />
+                </div>
                 </div>               
                   </div>
                   <div class="mb-3 d-flex row">
                   <div class="col-md-8">
                   <label for="quality" class="form-label">Quality</label>
                   </div>
-                    <div class="col-md-4">
-                    <input type="number" class="form-control" min="1" max="5" id="quality" name="quality" th:field="*{quality}"/ >
+                    <div class="col-md-4">  
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Excellent</label>
+                <input type="radio" class="form-check-input" id="quality" name="quality" th:value="5" th:field="*{quality}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Very Good</label>
+                <input type="radio" class="form-check-input" id="quality" name="quality" th:value="4" th:field="*{quality}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Good</label>
+                <input type="radio" class="form-check-input" id="quality" name="quality" th:value="3" th:field="*{quality}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Average</label>
+                <input type="radio" class="form-check-input" id="quality" name="quality" th:value="2" th:field="*{quality}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Poor</label>
+                <input type="radio" class="form-check-input" id="quality" name="quality" th:value="1" th:field="*{quality}" />
+                </div>   
                     </div>
                   </div>
                 <div class="mb-3 d-flex row">
@@ -35,7 +73,26 @@
                   <label for="fit" class="form-label">Fit</label>
                   </div>
                     <div class="col-md-4">
-                    <input type="number" class="form-control" min="1" max="5" id="fit" name="fit" th:field="*{fit}"/>
+                    <div class="form-check">
+                <label class="form-check-label" for="radio3">Excellent</label>
+                <input type="radio" class="form-check-input" id="fit" name="fit" th:value="5" th:field="*{fit}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Very Good</label>
+                <input type="radio" class="form-check-input" id="fit" name="fit" th:value="4" th:field="*{fit}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Good</label>
+                <input type="radio" class="form-check-input" id="fit" name="fit" th:value="3" th:field="*{fit}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Average</label>
+                <input type="radio" class="form-check-input" id="fit" name="fit" th:value="2" th:field="*{fit}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Poor</label>
+                <input type="radio" class="form-check-input" id="fit" name="fit" th:value="1" th:field="*{fit}" />
+                </div> 
                     </div>
                 </div>
                 <div class="mb-3 d-flex row">
@@ -43,7 +100,26 @@
                   <label for="delivery" class="form-label">Delivery</label>
                  </div>
                     <div class="col-md-4">
-                    <input type="number" class="form-control" min="1" max="5" id="delivery" name="delivery" th:field="*{delivery}" />
+                    <div class="form-check">
+                <label class="form-check-label" for="radio3">Excellent</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="5" th:field="*{delivery}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Very Good</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="4" th:field="*{delivery}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Good</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="3" th:field="*{delivery}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Average</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="2" th:field="*{delivery}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Poor</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="1" th:field="*{delivery}" />
+                </div>
                     </div>
                 </div>
                 <div class="mb-3 d-flex row">
@@ -51,10 +127,32 @@
                   <label for="service" class="form-label">Service</label>
                  </div>
                    <div class="col-md-4">
-                    <input type="number" class="form-control" min="1" max="5" id="service" name="service" th:field="*{service}" />
+                    <div class="form-check">
+                <label class="form-check-label" for="radio3">Excellent</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="5" th:field="*{service}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Very Good</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="4" th:field="*{service}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Good</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="3" th:field="*{service}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Average</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="2" th:field="*{service}" />
+                </div>
+                <div class="form-check">
+                <label class="form-check-label" for="radio3">Poor</label>
+                <input type="radio" class="form-check-input" id="delivery" name="delivery" th:value="1" th:field="*{service}" />
+                </div>
                    </div>
                 </div>
-				 <button type="submit" class="btn btn-primary">Submit</button>
+				 <div class="btn-container">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a th:href="@{/}" class="btn btn-primary">Back</a>
+                </div>
               </form>
               
         </div>

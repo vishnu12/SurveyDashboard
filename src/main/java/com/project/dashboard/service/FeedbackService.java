@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.project.dashboard.model.Feedback;
 import com.project.dashboard.repository.FeedbackRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class FeedbackService {
 	
@@ -24,6 +26,7 @@ public class FeedbackService {
 		return feedbackRepository.save(feedback);
 	}
 	
+	@Transactional
 	public List<Feedback> getAllFeedsForProd(Long prodId){
 		return feedbackRepository.getAllFeedsForProd(prodId);
 	}
