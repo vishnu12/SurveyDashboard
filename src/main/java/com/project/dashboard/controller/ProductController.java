@@ -1,6 +1,8 @@
 package com.project.dashboard.controller;
 
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -74,7 +76,14 @@ public class ProductController {
 	@GetMapping("/dashboard/{id}")
 	public String getDashboardPage(@PathVariable Long id,Model model) {
 		Product product=productService.findProductById(id);
+		Map<String, Integer> map=feedbackService.dataProviderForCards(id);
 		model.addAttribute("product", product);
+		model.addAttribute("valueForMoney", map.get("valueForMoney")/map.get("size"));
+		model.addAttribute("quality", map.get("quality")/map.get("size"));
+		model.addAttribute("fit", map.get("fit")/map.get("size"));
+		model.addAttribute("delivery", map.get("delivery")/map.get("size"));
+		model.addAttribute("service", map.get("service")/map.get("size"));
+		model.addAttribute("data", productService.dataForPieChart());
 		return "dashboard";
 	}
 	

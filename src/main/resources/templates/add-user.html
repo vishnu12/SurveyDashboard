@@ -8,8 +8,8 @@
 </head>
 <body>
 <div class="container-fluid main">
-        <div class="header"><h1>Create User</h1></div>
         <div class="form">
+        <h1 class="text-uppercase">Create User</h1>
             <form th:action="@{/api/user/add}" method="post" th:object="${user}">
             <div th:if="${param.success}">
 						<div class="alert alert-info">User Created Successfully</div>

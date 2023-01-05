@@ -9,10 +9,10 @@
 </head>
 <body>
 <div class="container-fluid">
-        <div class="header"><h1>Post Your Ratings</h1></div>
         <div class="form">
+        <h1 style="color:green">Post Your Ratings</h1>
             <form th:action="@{/api/feedback/add}" method="post" th:object="${feedback}">
-            <h2 th:text="${product.name}" class="text-center mb-4"></h2>
+            <h2 th:text="${product.name}" class="text-center mb-4" style="color:red"></h2>
                  <input type="hidden" name="prodId" th:value="${product.id}" />
                 <div class="mb-3 d-flex row">
                 <div class="col-md-8">
@@ -151,7 +151,7 @@
                 </div>
 				 <div class="btn-container">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a th:href="@{/}" class="btn btn-primary">Back</a>
+                <a th:href="@{'/api/product/dashboard/'+ ${product.id}}" class="btn btn-primary">Back</a>
                 </div>
               </form>
                </div>

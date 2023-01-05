@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="container-fluid main">
-        <div class="header"><h1>Register</h1></div>
         <div class="form">
+         <div class="header"><h1>Register</h1></div>
             <form th:action="@{/api/user/register}" method="post" th:object="${user}">
             <div th:if="${param.success}">
 						<div class="alert alert-info">You have registered successfully</div>

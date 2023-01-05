@@ -1,6 +1,3 @@
-@charset "ISO-8859-1";
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;500&display=swap');
 
 body{
@@ -12,17 +9,19 @@ body{
 
 
 .header{
-    width: 25rem;
-    height: 3rem;
     margin: 2rem auto;
     text-transform: uppercase;
 }
 
 .form{
     width: 25rem;
-    height: 20rem;
+    min-height: 10rem;
     margin: 2rem auto;
    
+}
+
+.form h1{
+	text-align: center;
 }
 
 a{
@@ -79,7 +78,33 @@ a{
 	
 }
 
-.form{
-	margin-bottom: 3rem;
+
+.card{
+	width:13rem;
+	height: 5rem;
+	margin:2rem 5rem;
+	align-items: center;
+	text-align: center;
 }
+
+.card h4{
+	text-align:center;
+	color:white;
+}
+
+.card h5{
+	text-align: center;
+}
+
+.top-section{
+	display: flex;
+	margin:1rem auto;
+	justify-content: space-around;
+	
+}
+
+
+
+
+
 

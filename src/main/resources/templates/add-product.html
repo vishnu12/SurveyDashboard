@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="container-fluid main">
-        <div class="header"><h1>Add Product</h1></div>
         <div class="form">
+        <div class="header"><h1>Add Product</h1></div>
             <form th:action="@{/api/product/add}" method="post" th:object="${product}">
             <div th:if="${param.success}">
 						<div class="alert alert-info">Product added successfully</div>
