@@ -34,13 +34,13 @@
                 <label for="role" class="form-label m-2">Roles :</label>
 				   <th:block th:each="role: ${listroles}">
 				<input type="checkbox" th:field="*{roles}"
-				   th:text="${role.name}" th:value="${role.id}" class="m-2" required />
+				   th:text="${role.name}" th:value="${role.id}" class="m-2" />
 				<label th:text="${role.name}"></label>
 				</th:block>     
                 </div>
 				 <div class="btn-container">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a th:href="@{/}" class="btn btn-primary">Back</a>
+                <a th:href="@{/api/users}" class="btn btn-primary">Back</a>
                 </div>
                 
               </form>

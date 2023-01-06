@@ -48,7 +48,7 @@ public class ProductController {
 	@PreAuthorize("hasAnyAuthority('Admin','Prevl_User')")
 	public String addProduct(@ModelAttribute("product") Product product) {
 		productService.addProduct(product);
-		return "redirect:/";
+		return "redirect:/api/product/add?success";
 	}
 	
 	@GetMapping("/update/{id}")
@@ -83,7 +83,8 @@ public class ProductController {
 		model.addAttribute("fit", map.get("fit")/map.get("size"));
 		model.addAttribute("delivery", map.get("delivery")/map.get("size"));
 		model.addAttribute("service", map.get("service")/map.get("size"));
-		model.addAttribute("data", productService.dataForPieChart());
+		model.addAttribute("pieChartData", productService.dataForPieChart());
+		model.addAttribute("barChartData", feedbackService.dataProviderForBarChart());
 		return "dashboard";
 	}
 	
@@ -95,11 +96,11 @@ public class ProductController {
 		
 	}
 	
-	@PostMapping("/review")
-	public String addFeedback(@ModelAttribute("product") Product product) {
-		Product updatedProduct=productService.updateProduct(product);
-		return "redirect:/";
-	}
+//	@PostMapping("/review")
+//	public String addFeedback(@ModelAttribute("product") Product product) {
+//		Product updatedProduct=productService.updateProduct(product);
+//		return "redirect:/";
+//	}
 	
 	
 }

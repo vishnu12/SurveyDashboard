@@ -3,14 +3,15 @@ package com.project.dashboard.service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.project.dashboard.model.Feedback;
+import com.project.dashboard.model.Product;
 import com.project.dashboard.repository.FeedbackRepository;
+import com.project.dashboard.repository.ProductRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -19,6 +20,9 @@ public class FeedbackService {
 	
 	@Autowired
 	private FeedbackRepository feedbackRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	public List<Feedback> getAllFeedbacks(){
 		return feedbackRepository.findAll();
@@ -58,6 +62,23 @@ public class FeedbackService {
 		
 	}   
     
+    public Map<String,Integer> dataProviderForBarChart(){
+    	List<Product> products=productRepository.findAll();
+    	Map<String,Integer> data=new TreeMap<>();
+    	for(Product product:products) {
+    		List<Feedback> feedbacks=feedbackRepository.getAllFeedsForProd(product.getId());
+    		int size=feedbacks.size()==0?1:feedbacks.size();
+    		int vfm=feedbacks.stream().reduce(0,(a,b)->a+(int)b.getValueForMoney(),Integer::sum);
+			int fit=feedbacks.stream().reduce(0,(a,b)->a+(int)b.getFit(),Integer::sum);
+			int quality=feedbacks.stream().reduce(0,(a,b)->a+(int)b.getQuality(),Integer::sum);
+			int delivery=feedbacks.stream().reduce(0,(a,b)->a+(int)b.getDelivery(),Integer::sum);
+			int service=feedbacks.stream().reduce(0,(a,b)->a+(int)b.getService(),Integer::sum);
+		    data.put(product.getName(), vfm+fit+quality+delivery+service/25*size);
+    	}
+    	
+    	return data;
+    	
+    }
     
 	
 }

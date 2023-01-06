@@ -61,7 +61,7 @@ public class UserController {
 	@PostMapping("/user/add")
 	public String createUserByAdmin(@ModelAttribute("user") User user) {
 		userService.updateUser(user);
-		return "redirect:/api/users";
+		return "redirect:/api/user/add?success";
 	}
 	
 	@GetMapping("/user/edit/{id}")

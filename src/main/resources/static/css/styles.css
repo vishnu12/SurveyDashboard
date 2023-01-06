@@ -5,6 +5,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Poppins',sans-serif;
+    background:#f1f1f1;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    
 }
 
 
@@ -82,7 +87,7 @@ a{
 .card{
 	width:13rem;
 	height: 5rem;
-	margin:2rem 5rem;
+	margin:2rem 7rem;
 	align-items: center;
 	text-align: center;
 	color:white;
@@ -98,7 +103,7 @@ a{
 }
 
 
-
+   
 
 
 
