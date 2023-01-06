@@ -51,7 +51,7 @@ public class FeedbackService {
 			map.put("quality", quality);
 			map.put("delivery", delivery);
 			map.put("service", service);
-			map.put("size", feedbacks.size());
+			map.put("size", feedbacks.size()==0?1:feedbacks.size());
 			
 			return map;
 		
