@@ -17,13 +17,16 @@
             <div th:if="${param.success}">
 						<div class="alert alert-info">You have registered successfully</div>
 					</div>
+					<div th:if="${param.exists}">
+						<div class="alert alert-danger">User Already Exists..</div>
+					</div>
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name</label>
                     <input type="text" required class="form-control" id="firstName" name="firstName" th:field="*{firstName}" >
                   </div>
                   <div class="mb-3">
                     <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" required class="form-control" id="lastName" name="lastName" th:field="*{lastName}">
+                    <input type="text" class="form-control" id="lastName" name="lastName" th:field="*{lastName}">
                   </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>

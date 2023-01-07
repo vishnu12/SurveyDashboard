@@ -67,6 +67,12 @@ public class UserService implements UserDetailsService {
 	public void deleteUser(Long id) {
 		userRepository.deleteById(id);
 	}
+	
+	public boolean isUserExists(String email) {
+		User user=userRepository.findByEmail(email);
+		if(user!=null) return true;
+		return false;
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

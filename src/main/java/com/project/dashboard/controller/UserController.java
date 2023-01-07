@@ -54,12 +54,18 @@ public class UserController {
 	
 	@PostMapping("/user/register")
 	public String register(@ModelAttribute("user") User user) {
+		if(userService.isUserExists(user.getEmail())) {
+			return "redirect:/api/user/register?exists";
+		}
 		userService.save(user);
 		return "redirect:/api/user/register?success";
 	}
 	
 	@PostMapping("/user/add")
 	public String createUserByAdmin(@ModelAttribute("user") User user) {
+		if(userService.isUserExists(user.getEmail())) {
+			return "redirect:/api/user/add?exists";
+		}
 		userService.updateUser(user);
 		return "redirect:/api/user/add?success";
 	}
